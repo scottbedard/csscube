@@ -86,7 +86,7 @@ $( document ).ready(function() {
 			FR	: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(_size_, 0, _depth_)',
 			FDL	: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-_size_, _size_, _depth_)',
 			FD	: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, _size_, _depth_)',
-			FRD : 'rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(_size_, _size_, _depth_)',
+			FRD	: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(_size_, _size_, _depth_)',
 
 			RFU	: 'rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(-_size_, -_size_, _depth_)',
 			RU	: 'rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, -_size_, _depth_)',
@@ -120,7 +120,7 @@ $( document ).ready(function() {
 		},
 
 		/**
-		 * Make sure jQuery and CSS are on the same page
+		 * Make sure the JS and CSS are on the same page
 		 */
 		construct : function () {
 			var css;
@@ -137,7 +137,7 @@ $( document ).ready(function() {
 		 * Process keypress events and add to pending turns
 		 */
 		addTurn : function ( event ) {
-			// Shut down the default action of the keyup
+			// Shut down the default action of the keypress
 			event.preventDefault();
 
 			// Figure out which key we're dealing with
@@ -275,7 +275,7 @@ $( document ).ready(function() {
 		},
 
 		/**
-		 * Returns jQuery selector of all stickers being effected by a turn
+		 * Returns the jQuery selector for all stickers being effected by a turn
 		 */
 		selectStickers : function ( effects ) {
 			// Loop through the effects of our turn, create an array of stickers being effected
@@ -293,8 +293,7 @@ $( document ).ready(function() {
 		},
 
 		/**
-		 * Reads the pre-turn sticker positions of effected stickers,
-		 * and sets the cube turning status to TRUE
+		 * Reads the pre-turn sticker positions of effected stickers
 		 */
 		readStickers : function( effects ) {
 			var colors = [];
@@ -313,6 +312,9 @@ $( document ).ready(function() {
 			return colors;
 		},
 
+		/**
+		 * Paints the stickers to reflect the turn that was just made
+		 */
 		writeStickers : function ( effects, inverted ) {
 			// Reference this as self so we can use it from inside anonymous functions
 			var self = this;
@@ -654,11 +656,11 @@ $( document ).ready(function() {
 		}
 	}
 
-	// Call construct so jQuery and CSS are on the same page
+	// Call construct so the JS and CSS are on the same page
 	cube.construct();
 	$('#controller').focus();
 
-	// Listen for keyup events from our input controller
+	// Listen for keypress events from our input controller
 	$('#controller').keypress(function( event ) {
 		// Send the event to addTurn()
 		cube.addTurn( event );
