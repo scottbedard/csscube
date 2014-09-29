@@ -1,0 +1,182 @@
+/**
+ * CSS Cube
+ *
+ * This was mostly just an excuse to play with 3D transforms, transitions, and object-oriented
+ * javascript. It's not the most practical way to build this kind of tool, but I had fun doing it
+ * and I hope you find it interesting.
+ *
+ * (c) Scott Bedard 2014
+ * http://scottbedard.net/csscube
+ */
+
+// Make sure these values match the ones in the JS file, otherwise the transitions will
+// look screwy because jQuery and CSS won't agree about the size and location of the stickers
+$sticker_spacing: 14px;
+$sticker_size: 55px;
+$sticker_depth: 103px;
+
+// Just some settings for how to display our stickers
+$sticker_opacity: 0.95;
+$sticker_radius: 5px;
+$sticker_border: 1px solid #000;
+
+// The speed the cube will turn at
+$turning_speed: 0.1s;
+
+// Our starting colors
+$up:	#FFFF00;
+$left:	#FF9900;
+$front:	#0066FF;
+$right:	#FF0000;
+$back:	#33CC33;
+$down:	#222222;
+
+// Highest level container for the cube
+.stage {
+	perspective: 3000px;
+	transform: rotateX(-25deg);
+}
+
+// Container for the sticker divs
+.cube {
+	height: 500px;
+	margin: 0 auto;
+	perspective: 2000px;
+	position: relative;
+	transform: rotateX(-25deg);
+	transform-style: preserve-3d;
+	width: 500px;
+
+	// General sticker properties
+	div {
+		opacity: $sticker_opacity;
+		transition: transform $turning_speed;
+		transition-timing-function: ease-in-out;
+	}
+}
+
+.sticker {
+	border: $sticker_border;
+	border-radius: $sticker_radius;
+	height: $sticker_size;
+	left: calc(50% - #{$sticker_size / 2});
+	position: absolute;
+	top: calc(50% - #{$sticker_size / 2});
+	width: $sticker_size;
+
+	$sticker: $sticker_size + $sticker_spacing;
+
+	/**
+	 * UP STICKERS
+	 */
+	$U_X: 90deg;
+	$U_Y: 0deg;
+	$U_Z: 0deg;
+	&.up {
+		background: $up;
+		&.one	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d(-$sticker, -$sticker, $sticker_depth); }
+		&.two	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d(0, -$sticker, $sticker_depth); }
+		&.three	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d($sticker, -$sticker, $sticker_depth); }
+		&.four	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d(-$sticker, 0, $sticker_depth); }
+		&.five	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d(0, 0, $sticker_depth); }
+		&.six	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d($sticker, 0, $sticker_depth); }
+		&.seven	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d(-$sticker, $sticker, $sticker_depth); }
+		&.eight	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d(0, $sticker, $sticker_depth); }
+		&.nine	{ transform: rotateX($U_X) rotateY($U_Y) rotateZ($U_Z) translate3d($sticker, $sticker, $sticker_depth); }
+	}
+
+	/**
+	 * LEFT STICKERS
+	 */
+	$L_X: 0deg;
+	$L_Y: -90deg;
+	$L_Z: 0deg;
+	&.left {
+		background: $left;
+		&.one	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d(-$sticker, -$sticker, $sticker_depth); }
+		&.two	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d(0, -$sticker, $sticker_depth); }
+		&.three	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d($sticker, -$sticker, $sticker_depth); }
+		&.four	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d(-$sticker, 0, $sticker_depth); }
+		&.five	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d(0, 0, $sticker_depth); }
+		&.six	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d($sticker, 0, $sticker_depth); }
+		&.seven	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d(-$sticker, $sticker, $sticker_depth); }
+		&.eight	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d(0, $sticker, $sticker_depth); }
+		&.nine	{ transform: rotateY($L_Y) rotateX($L_X) rotateZ($L_Z) translate3d($sticker, $sticker, $sticker_depth); }
+	}
+
+	/**
+	 * FRONT STICKERS
+	 */
+	$R_X: 0deg;
+	$R_Y: 0deg;
+	$R_Z: 0deg;
+	&.front {
+		background: $front;
+		&.one	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d(-$sticker, -$sticker, $sticker_depth); }
+		&.two	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d(0, -$sticker, $sticker_depth); }
+		&.three	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d($sticker, -$sticker, $sticker_depth); }
+		&.four	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d(-$sticker, 0, $sticker_depth); }
+		&.five	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d(0, 0, $sticker_depth); }
+		&.six	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d($sticker, 0, $sticker_depth); }
+		&.seven	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d(-$sticker, $sticker, $sticker_depth); }
+		&.eight	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d(0, $sticker, $sticker_depth); }
+		&.nine	{ transform: rotateX($R_X) rotateY($R_Y) rotateZ($R_Z) translate3d($sticker, $sticker, $sticker_depth); }
+	}
+
+	/**
+	 * RIGHT STICKERS
+	 */
+	$R_X: 0deg;
+	$R_Y: 90deg;
+	$R_Z: 0deg;
+	&.right {
+		background: $right;
+		&.one	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d(-$sticker, -$sticker, $sticker_depth); }
+		&.two	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d(0, -$sticker, $sticker_depth); }
+		&.three	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d($sticker, -$sticker, $sticker_depth); }
+		&.four	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d(-$sticker, 0, $sticker_depth); }
+		&.five	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d(0, 0, $sticker_depth); }
+		&.six	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d($sticker, 0, $sticker_depth); }
+		&.seven	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d(-$sticker, $sticker, $sticker_depth); }
+		&.eight	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d(0, $sticker, $sticker_depth); }
+		&.nine	{ transform: rotateY($R_Y) rotateX($R_X) rotateZ($R_Z) translate3d($sticker, $sticker, $sticker_depth); }
+	}
+
+	/**
+	 * BACK STICKERS
+	 */
+	$B_X: 0deg;
+	$B_Y: 180deg;
+	$B_Z: 0deg;
+	&.back {
+		background: $back;
+		&.one	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d(-$sticker, -$sticker, $sticker_depth); }
+		&.two	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d(0, -$sticker, $sticker_depth); }
+		&.three	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d($sticker, -$sticker, $sticker_depth); }
+		&.four	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d(-$sticker, 0, $sticker_depth); }
+		&.five	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d(0, 0, $sticker_depth); }
+		&.six	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d($sticker, 0, $sticker_depth); }
+		&.seven	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d(-$sticker, $sticker, $sticker_depth); }
+		&.eight	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d(0, $sticker, $sticker_depth); }
+		&.nine	{ transform: rotateY($B_Y) rotateX($B_X) rotateZ($B_Z) translate3d($sticker, $sticker, $sticker_depth); }
+	}
+
+	/**
+	 * DOWN STICKERS
+	 */
+	$D_X: -90deg;
+	$D_Y: 0deg;
+	$D_Z: 0deg;
+	&.down {
+		background: $down;
+		&.one	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d(-$sticker, -$sticker, $sticker_depth); }
+		&.two	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d(0, -$sticker, $sticker_depth); }
+		&.three	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d($sticker, -$sticker, $sticker_depth); }
+		&.four	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d(-$sticker, 0, $sticker_depth); }
+		&.five	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d(0, 0, $sticker_depth); }
+		&.six	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d($sticker, 0, $sticker_depth); }
+		&.seven	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d(-$sticker, $sticker, $sticker_depth); }
+		&.eight	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d(0, $sticker, $sticker_depth); }
+		&.nine	{ transform: rotateX($D_X) rotateY($D_Y) rotateZ($D_Z) translate3d($sticker, $sticker, $sticker_depth); }
+	}
+}

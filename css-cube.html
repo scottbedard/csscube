@@ -1,0 +1,116 @@
+<!--
+ - CSS Cube
+ -
+ - This was mostly just an excuse to play with 3D transforms, transitions, and object-oriented
+ - javascript. It's not the most practical way to build this kind of tool, but I had fun doing it
+ - and I hope you find it interesting.
+ -
+ - (c) Scott Bedard 2014
+ - http://scottbedard.net/csscube
+ -->
+
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="cube.css">
+	</head>
+
+	<body>
+		<div class="stage">
+
+			<div class="cube">
+
+				<!-- UP STICKERS -->
+				<div id="ULB" class="sticker up one"></div>
+				<div id="UB" class="sticker up two"></div>
+				<div id="UBR" class="sticker up three"></div>
+				<div id="UL" class="sticker up four"></div>
+				<div id="U" class="sticker up five"></div>
+				<div id="UR" class="sticker up six"></div>
+				<div id="UFL" class="sticker up seven"></div>
+				<div id="UF" class="sticker up eight"></div>
+				<div id="URF" class="sticker up nine"></div>
+
+				<!-- LEFT STICKERS -->
+				<div id="LBU" class="sticker left one"></div>
+				<div id="LU" class="sticker left two"></div>
+				<div id="LUF" class="sticker left three"></div>
+				<div id="LB" class="sticker left four"></div>
+				<div id="L" class="sticker left five"></div>
+				<div id="LF" class="sticker left six"></div>
+				<div id="LDB" class="sticker left seven"></div>
+				<div id="LD" class="sticker left eight"></div>
+				<div id="LFD" class="sticker left nine"></div>
+
+				<!-- FRONT STICKERS -->
+				<div id="FLU" class="sticker front one"></div>
+				<div id="FU" class="sticker front two"></div>
+				<div id="FUR" class="sticker front three"></div>
+				<div id="FL" class="sticker front four"></div>
+				<div id="F" class="sticker front five"></div>
+				<div id="FR" class="sticker front six"></div>
+				<div id="FDL" class="sticker front seven"></div>
+				<div id="FD" class="sticker front eight"></div>
+				<div id="FRD" class="sticker front nine"></div>
+
+				<!-- RIGHT STICKERS -->
+				<div id="RFU" class="sticker right one"></div>
+				<div id="RU" class="sticker right two"></div>
+				<div id="RUB" class="sticker right three"></div>
+				<div id="RF" class="sticker right four"></div>
+				<div id="R" class="sticker right five"></div>
+				<div id="RB" class="sticker right six"></div>
+				<div id="RDF" class="sticker right seven"></div>
+				<div id="RD" class="sticker right eight"></div>
+				<div id="RBD" class="sticker right nine"></div>
+
+				<!-- BACK STICKERS -->
+				<div id="BRU" class="sticker back one"></div>
+				<div id="BU" class="sticker back two"></div>
+				<div id="BUL" class="sticker back three"></div>
+				<div id="BR" class="sticker back four"></div>
+				<div id="B" class="sticker back five"></div>
+				<div id="BL" class="sticker back six"></div>
+				<div id="BDR" class="sticker back seven"></div>
+				<div id="BD" class="sticker back eight"></div>
+				<div id="BLD" class="sticker back nine"></div>
+
+				<!-- DOWN STICKERS -->
+				<div id="DLF" class="sticker down one"></div>
+				<div id="DF" class="sticker down two"></div>
+				<div id="DFR" class="sticker down three"></div>
+				<div id="DL" class="sticker down four"></div>
+				<div id="D" class="sticker down five"></div>
+				<div id="DR" class="sticker down six"></div>
+				<div id="DBL" class="sticker down seven"></div>
+				<div id="DB" class="sticker down eight"></div>
+				<div id="DRB" class="sticker down nine"></div>
+				
+
+			</div>
+
+		</div>
+
+		<div style="text-align: center;">
+			<input type="text" id="controller" /><br />
+			<input type="button" id="scramble" value="SCRAMBLE" /><br />
+			<br />
+			U = j&nbsp;&nbsp;&nbsp;U' = f<br />
+			L = d&nbsp;&nbsp;&nbsp;L' = e<br />
+			F = h&nbsp;&nbsp;&nbsp;F' = g<br />
+			R = i&nbsp;&nbsp;&nbsp;R' = k<br />
+			B = w&nbsp;&nbsp;&nbsp;B' = o<br />
+			D = s&nbsp;&nbsp;&nbsp;D' = l<br />
+			<br />
+			X = ;&nbsp;&nbsp;&nbsp;X' = a<br />
+			Y = tyu&nbsp;&nbsp;&nbsp;Y' = vn
+
+		</div>
+
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="cube.js"></script>
+	</body>
+
+</html>

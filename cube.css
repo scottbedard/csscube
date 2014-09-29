@@ -1,0 +1,234 @@
+/**
+ * CSS Cube
+ *
+ * This was mostly just an excuse to play with 3D transforms, transitions, and object-oriented
+ * javascript. It's not the most practical way to build this kind of tool, but I had fun doing it
+ * and I hope you find it interesting.
+ *
+ * (c) Scott Bedard 2014
+ * http://scottbedard.net/csscube
+ */
+.stage {
+  -webkit-perspective: 3000px;
+          perspective: 3000px;
+  -webkit-transform: rotateX(-25deg);
+          transform: rotateX(-25deg); }
+
+.cube {
+  height: 500px;
+  margin: 0 auto;
+  -webkit-perspective: 2000px;
+          perspective: 2000px;
+  position: relative;
+  -webkit-transform: rotateX(-25deg);
+          transform: rotateX(-25deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 500px; }
+  .cube div {
+    opacity: 0.95;
+    -webkit-transition: -webkit-transform 0.1s;
+            transition: transform 0.1s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out; }
+
+.sticker {
+  border: 1px solid #000;
+  border-radius: 5px;
+  height: 55px;
+  left: calc(50% - 27.5px);
+  position: absolute;
+  top: calc(50% - 27.5px);
+  width: 55px;
+  /**
+	 * UP STICKERS
+	 */
+  /**
+	 * LEFT STICKERS
+	 */
+  /**
+	 * FRONT STICKERS
+	 */
+  /**
+	 * RIGHT STICKERS
+	 */
+  /**
+	 * BACK STICKERS
+	 */
+  /**
+	 * DOWN STICKERS
+	 */ }
+  .sticker.up {
+    background: #FFFF00; }
+    .sticker.up.one {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px); }
+    .sticker.up.two {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -69px, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -69px, 103px); }
+    .sticker.up.three {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px); }
+    .sticker.up.four {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px); }
+    .sticker.up.five {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 103px); }
+    .sticker.up.six {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 0, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 0, 103px); }
+    .sticker.up.seven {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px); }
+    .sticker.up.eight {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 69px, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 69px, 103px); }
+    .sticker.up.nine {
+      -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px);
+              transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px); }
+  .sticker.left {
+    background: #FF9900; }
+    .sticker.left.one {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px); }
+    .sticker.left.two {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, -69px, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, -69px, 103px); }
+    .sticker.left.three {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px); }
+    .sticker.left.four {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px); }
+    .sticker.left.five {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 0, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 0, 103px); }
+    .sticker.left.six {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 0, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 0, 103px); }
+    .sticker.left.seven {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px); }
+    .sticker.left.eight {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 69px, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 69px, 103px); }
+    .sticker.left.nine {
+      -webkit-transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px);
+              transform: rotateY(-90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px); }
+  .sticker.front {
+    background: #0066FF; }
+    .sticker.front.one {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px); }
+    .sticker.front.two {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -69px, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -69px, 103px); }
+    .sticker.front.three {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px); }
+    .sticker.front.four {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px); }
+    .sticker.front.five {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 103px); }
+    .sticker.front.six {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 0, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 0, 103px); }
+    .sticker.front.seven {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px); }
+    .sticker.front.eight {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 69px, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 69px, 103px); }
+    .sticker.front.nine {
+      -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px);
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px); }
+  .sticker.right {
+    background: #FF0000; }
+    .sticker.right.one {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px); }
+    .sticker.right.two {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, -69px, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, -69px, 103px); }
+    .sticker.right.three {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px); }
+    .sticker.right.four {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px); }
+    .sticker.right.five {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 0, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 0, 103px); }
+    .sticker.right.six {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 0, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 0, 103px); }
+    .sticker.right.seven {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px); }
+    .sticker.right.eight {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 69px, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 69px, 103px); }
+    .sticker.right.nine {
+      -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px);
+              transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px); }
+  .sticker.back {
+    background: #33CC33; }
+    .sticker.back.one {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px); }
+    .sticker.back.two {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(0, -69px, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(0, -69px, 103px); }
+    .sticker.back.three {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px); }
+    .sticker.back.four {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px); }
+    .sticker.back.five {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 0, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 0, 103px); }
+    .sticker.back.six {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 0, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 0, 103px); }
+    .sticker.back.seven {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px); }
+    .sticker.back.eight {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 69px, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(0, 69px, 103px); }
+    .sticker.back.nine {
+      -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px);
+              transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px); }
+  .sticker.down {
+    background: #222222; }
+    .sticker.down.one {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, -69px, 103px); }
+    .sticker.down.two {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -69px, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, -69px, 103px); }
+    .sticker.down.three {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, -69px, 103px); }
+    .sticker.down.four {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 0, 103px); }
+    .sticker.down.five {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 103px); }
+    .sticker.down.six {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 0, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 0, 103px); }
+    .sticker.down.seven {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(-69px, 69px, 103px); }
+    .sticker.down.eight {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 69px, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 69px, 103px); }
+    .sticker.down.nine {
+      -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px);
+              transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translate3d(69px, 69px, 103px); }
