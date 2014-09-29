@@ -194,34 +194,35 @@ $( document ).ready(function() {
 		 * Generates a ramdom sequence of moves and adds it to the turn que
 		 */
 		scramble : function () {
-			// Possible faces we might turn, and the direction we might be turning them
-			var faces = ['U', 'L', 'F', 'R', 'B', 'D'];
-			var rotation = [-90, 90];
-			
-			// Generate a random turn until the scramble reaches the desired depth
-			var i = 0;
-			var previous = false;
-			while ( i < this.scramble_depth) {
-				// Pick a random face
-				var face = faces[Math.floor(Math.random()*faces.length)];
+			// Only scramble the cube if we have no pending turns
+			if (this.pending_turns.length <= 0 && ! this.turning) {
+				// Possible faces we might turn, and the direction we might be turning them
+				var faces = ['U', 'L', 'F', 'R', 'B', 'D'];
+				var rotation = [-90, 90];
+				
+				// Generate a random turn until the scramble reaches the desired depth
+				var i = 0;
+				var previous = false;
+				while ( i < this.scramble_depth) {
+					// Pick a random face
+					var face = faces[Math.floor(Math.random()*faces.length)];
 
-				// Make sure we aren't turning the same face twice in a row, this will prevent mirrored
-				// scramble moves from canceling each other out
-				if ( ! previous || previous != face) {
-					// Determine the degree of the turn
-					var turn = { 'face' : face, 'turn' : rotation[Math.floor(Math.random()*rotation.length)]}
-					
-					// Add the turn to the que
-					this.pending_turns.push(turn);
+					// Make sure we aren't turning the same face twice in a row, this will prevent mirrored
+					// scramble moves from canceling each other out
+					if ( ! previous || previous != face) {
+						// Determine the degree of the turn
+						var turn = { 'face' : face, 'turn' : rotation[Math.floor(Math.random()*rotation.length)]}
+						
+						// Add the turn to the que
+						this.pending_turns.push(turn);
 
-					// Keep track of the face we just turned
-					previous = face;
-					i++;
+						// Keep track of the face we just turned
+						previous = face;
+						i++;
+					}
 				}
-			}
 
-			// Start executing the scramble
-			if ( ! this.turning ) {
+				// Start executing the scramble
 				this.executeTurns();
 			}
 		},
