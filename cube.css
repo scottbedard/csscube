@@ -23,8 +23,7 @@
   -webkit-transform: rotateX(-25deg);
           transform: rotateX(-25deg);
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  width: 500px; }
+          transform-style: preserve-3d; }
   .cube div {
     opacity: 0.95;
     -webkit-transition: -webkit-transform 0.1s;
