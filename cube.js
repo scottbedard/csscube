@@ -145,41 +145,39 @@ $( document ).ready(function() {
 			var turn = {};
 
 			// UP TURNS ( J & F )
-			if (key == 'j') { turn = { 'face' : 'U', 'turn' : 90 }
-			} else if (key == 'f') { turn = { 'face' : 'U', 'turn' : -90 }
+			if (key == 'j') { turn = { 'face' : 'U', 'turn' : 90 } }
+			else if (key == 'f') { turn = { 'face' : 'U', 'turn' : -90 } }
 
 			// LEFT TURNS ( D & E )
-			} else if (key == 'd') { turn = { 'face' : 'L', 'turn' : 90 }
-			} else if (key == 'e') { turn = { 'face' : 'L', 'turn' : -90 }
-			
+			else if (key == 'd') { turn = { 'face' : 'L', 'turn' : 90 } }
+			else if (key == 'e') { turn = { 'face' : 'L', 'turn' : -90 } }
+
 			// FACE TURNS ( H & G )
-			} else if (key == 'h') { turn = { 'face' : 'F', 'turn' : 90 }
-			} else if (key == 'g') { turn = { 'face' : 'F', 'turn' : -90 }
+			else if (key == 'h') { turn = { 'face' : 'F', 'turn' : 90 } }
+			else if (key == 'g') { turn = { 'face' : 'F', 'turn' : -90 } }
 
 			// RIGHT TURNS ( I & K )
-			} else if (key == 'i') { turn = { 'face' : 'R', 'turn' : 90 }
-			} else if (key == 'k') { turn = { 'face' : 'R', 'turn' : -90 }
+			else if (key == 'i') { turn = { 'face' : 'R', 'turn' : 90 } }
+			else if (key == 'k') { turn = { 'face' : 'R', 'turn' : -90 } }
 
 			// BACK TURNS ( W & O )
-			} else if (key == 'w') { turn = { 'face' : 'B', 'turn' : 90 }
-			} else if (key == 'o') { turn = { 'face' : 'B', 'turn' : -90 }
-			
+			else if (key == 'w') { turn = { 'face' : 'B', 'turn' : 90 } }
+			else if (key == 'o') { turn = { 'face' : 'B', 'turn' : -90 } }
+
 			// DOWN TURNS ( S & L )
-			} else if (key == 's') { turn = { 'face' : 'D', 'turn' : 90 }
-			} else if (key == 'l') { turn = { 'face' : 'D', 'turn' : -90 }
+			else if (key == 's') { turn = { 'face' : 'D', 'turn' : 90 } }
+			else if (key == 'l') { turn = { 'face' : 'D', 'turn' : -90 } }
 
 			// X ROTATIONS ( U, Y, T, N, & V )
-			} else if (key == 'u' || key == 'y' || key == 't') {
-				turn = { 'face' : 'X', 'turn' : 90 }
-			} else if (key == 'n' || key == 'v') {
-				turn = { 'face' : 'X', 'turn' : -90 }
+			else if (key == 'u' || key == 'y' || key == 't') { turn = { 'face' : 'X', 'turn' : 90 } }
+			else if (key == 'n' || key == 'v') { turn = { 'face' : 'X', 'turn' : -90 } }
 
 			// Y ROTATIONS ( ; & A )
-			} else if (key == ';') { turn = { 'face' : 'Y', 'turn' : 90 }
-			} else if (key == 'a') { turn = { 'face' : 'Y', 'turn' : -90 }
+			else if (key == ';') { turn = { 'face' : 'Y', 'turn' : 90 } }
+			else if (key == 'a') { turn = { 'face' : 'Y', 'turn' : -90 } }
 
 			// Unknown input, do nothing
-			} else { return false; }
+			else { return false; }
 
 			// Add the turn to the que
 			this.pending_turns.push(turn);
