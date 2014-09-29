@@ -194,10 +194,7 @@ $( document ).ready(function() {
 		 * Generates a ramdom sequence of moves and adds it to the turn que
 		 */
 		scramble : function () {
-			// Clear the pending turns que
-			this.pending_turns = [];
-
-			// Possible faces we might turn, and how far we might turn them
+			// Possible faces we might turn, and the direction we might be turning them
 			var faces = ['U', 'L', 'F', 'R', 'B', 'D'];
 			var rotation = [-90, 90];
 			
@@ -224,7 +221,9 @@ $( document ).ready(function() {
 			}
 
 			// Start executing the scramble
-			this.executeTurns();
+			if ( ! this.turning ) {
+				this.executeTurns();
+			}
 		},
 
 		/**
