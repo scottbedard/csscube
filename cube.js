@@ -38,9 +38,9 @@ $( document ).ready(function() {
 		
 		// Make sure these values match the ones in the SCSS file, otherwise the transitions will
 		// look screwy because jQuery and CSS won't agree about the size and location of the stickers
-		sticker_depth : 103,
+		sticker_depth : 100,
 		sticker_size : 55,
-		sticker_spacing : 14,
+		sticker_spacing : 10,
 
 		// Turning status, this prevents turns from firing before a previous turn is complete
 		turning : false,
@@ -123,8 +123,6 @@ $( document ).ready(function() {
 		 * Make sure jQuery and CSS are on the same page
 		 */
 		construct : function () {
-			console.log(this.sticker);
-			
 			var css;
 			for (var stickerName in this.sticker) {
 				if (this.sticker.hasOwnProperty(stickerName)) {
@@ -133,8 +131,6 @@ $( document ).ready(function() {
 					this.sticker[stickerName] = this.sticker[stickerName].replace(/_size_/g, (this.sticker_size + this.sticker_spacing) + 'px');
 				}
 			}
-
-			console.log(this.sticker);
 		},
 
 		/**
@@ -660,6 +656,7 @@ $( document ).ready(function() {
 
 	// Call construct so jQuery and CSS are on the same page
 	cube.construct();
+	$('#controller').focus();
 
 	// Listen for keyup events from our input controller
 	$('#controller').keypress(function( event ) {

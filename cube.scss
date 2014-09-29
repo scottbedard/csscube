@@ -11,9 +11,9 @@
 
 // Make sure these values match the ones in the JS file, otherwise the transitions will
 // look screwy because jQuery and CSS won't agree about the size and location of the stickers
-$sticker_spacing: 14px;
+$sticker_spacing: 10px;
 $sticker_size: 55px;
-$sticker_depth: 103px;
+$sticker_depth: 100px;
 
 // Just some settings for how to display our stickers
 $sticker_opacity: 0.95;
@@ -34,12 +34,12 @@ $down:	#222222;
 // Highest level container for the cube
 .stage {
 	perspective: 3000px;
-	transform: rotateX(-25deg);
+	transform: rotateX(-15deg);
 }
 
 // Container for the sticker divs
 .cube {
-	height: 500px;
+	height: 300px;
 	margin: 0 auto;
 	perspective: 2000px;
 	position: relative;
